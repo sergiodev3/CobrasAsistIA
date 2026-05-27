@@ -1,0 +1,51 @@
+name: cobras_asist_ia
+description: "App educativa de preparatoria que integra Flutter + MCP + Gemini + SQLite."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # --- Gestión de estado (ViewModels MVVM) ---
+  flutter_riverpod: ^2.5.1
+
+  # --- Protocolo MCP: servidor in-process con herramientas locales ---
+  dart_mcp: 0.5.1
+  stream_channel: ^2.1.2
+
+  # --- IA multimodal (Gemini: texto + imagen) ---
+  google_generative_ai: ^0.4.6
+
+  # --- Persistencia local: SQLite con SQL puro (pedagógico) ---
+  sqflite: ^2.4.0
+  path: ^1.9.0
+  path_provider: ^2.1.4
+
+  # --- Captura de imagen (cámara + galería) ---
+  image_picker: ^1.1.2
+
+  # --- Configuración (.env con API keys) ---
+  flutter_dotenv: ^5.2.1
+
+  # --- Backend remoto (solo dependencia + provider vacío por ahora) ---
+  supabase_flutter: ^2.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Cargamos el .env como asset para que flutter_dotenv pueda leerlo en runtime.
+  assets:
+    - .env

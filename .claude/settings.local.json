@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir c:\\\\dev\\\\flutter-app\\\\app-sqlite-mcp\\\\cobras_asist_ia)",
+      "PowerShell($items = Get-ChildItem \"c:\\\\dev\\\\flutter-app\\\\app-sqlite-mcp\\\\cobras_asist_ia\" -Force; $items.Count; $items)",
+      "PowerShell(Write-Output \\(Get-ChildItem \"c:\\\\dev\\\\flutter-app\\\\app-sqlite-mcp\\\\cobras_asist_ia\\\\lib\" -Recurse -Force | Out-String\\))",
+      "WebFetch(domain:pub.dev)"
+    ]
+  }
+}
