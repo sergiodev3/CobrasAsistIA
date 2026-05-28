@@ -66,9 +66,17 @@ final geminiModelProvider = Provider<GenerativeModel>((ref) {
       'Copia .env.example a .env y agrega tu API key.',
     );
   }
+  // DEBUG: remove after confirming the correct key is loaded
+  final masked = apiKey.length > 12
+      ? '${apiKey.substring(0, 8)}...${apiKey.substring(apiKey.length - 4)}'
+      : '(key muy corta?)';
+  // ignore: avoid_print
+  print(
+    '[GeminiProvider] API key cargada: $masked (longitud: ${apiKey.length})',
+  );
   return GenerativeModel(
     // Modelo rápido y económico que soporta entrada multimodal y tool use.
-    model: 'gemini-1.5-flash',
+    model: 'gemini-2.5-flash',
     apiKey: apiKey,
     tools: obtenerToolsParaGemini(),
     systemInstruction: Content.system(

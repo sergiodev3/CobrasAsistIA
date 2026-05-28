@@ -82,12 +82,23 @@ class _Contenido extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (state.estado) {
       case EstadoEscaneo.inicial:
-        return const Center(
-          child: Text(
-            'Toma una foto de tus apuntes o del pizarrón.\n'
-            'La IA detectará tareas y generará flashcards.',
-            textAlign: TextAlign.center,
-          ),
+        return Column(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Image.asset(
+                'assets/cobras-task-asist-logo.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Toma una foto de tus apuntes o del pizarrón.\n'
+              'La IA detectará tareas y generará flashcards.',
+              textAlign: TextAlign.center,
+            ),
+            const Spacer(flex: 1),
+          ],
         );
       case EstadoEscaneo.capturando:
         return const Center(child: Text('Abriendo cámara...'));

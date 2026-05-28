@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('CobrasAsistIA')),
+      appBar: AppBar(title: const Text('Cobras Task Asist')),
       body: _paginas[_index],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,

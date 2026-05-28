@@ -45,8 +45,8 @@ final mcp.Tool guardarFlashcardsMcpTool = mcp.Tool(
 );
 
 /// Declaración equivalente para Gemini.
-final gemini.FunctionDeclaration guardarFlashcardsGeminiDeclaration =
-    gemini.FunctionDeclaration(
+final gemini.FunctionDeclaration
+guardarFlashcardsGeminiDeclaration = gemini.FunctionDeclaration(
   guardarFlashcardsToolName,
   'Guarda una o varias flashcards en la base de datos local.',
   gemini.Schema.object(
@@ -59,9 +59,7 @@ final gemini.FunctionDeclaration guardarFlashcardsGeminiDeclaration =
             'respuesta': gemini.Schema.string(description: 'Respuesta.'),
             'materia': gemini.Schema.string(description: 'Materia (opcional).'),
             'tema': gemini.Schema.string(description: 'Tema (opcional).'),
-            'dificultad': gemini.Schema.integer(
-              description: 'Dificultad 1-5.',
-            ),
+            'dificultad': gemini.Schema.integer(description: 'Dificultad 1-5.'),
           },
           requiredProperties: ['pregunta', 'respuesta'],
         ),
